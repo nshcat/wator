@@ -119,7 +119,7 @@ void ptrmap_realloc(ptrmapptr_t map, size_t additional)
 	size_t counter,i;
 	size_t oldlen = map->length;
 	mapelemptr_t x = (mapelemptr_t)malloc(sizeof(mapelem_t)*map->length);
-	memcpy_s(x, sizeof(mapelem_t)*map->length, map->data, sizeof(mapelem_t)*map->length);
+	memcpy(x, map->data, sizeof(mapelem_t)*map->length);
 
 	// Reallocate 
 	free(map->data);

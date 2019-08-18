@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../btt/include/tagtree.h
+stdint.h
+-
+stdio.h
+-
+
+/home/kitty/git/wator/btt/src/tagtree.c
+string.h
+-
+memory.h
+-
+stdlib.h
+-
+assert.h
+-
+tagtree.h
+/home/kitty/git/wator/btt/src/tagtree.h
+

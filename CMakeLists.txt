@@ -37,7 +37,7 @@ if(MINGW OR MSYS)
 	
 # Use find_package to retrieve SDL2 paths
 else()
-	set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_LIST_DIR}/../../cmake)
+	set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_LIST_DIR}/cmake)
 	find_package(SDL2 REQUIRED)
 	find_package(SDL2_image REQUIRED)
 	

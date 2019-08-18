@@ -6,6 +6,7 @@
 #undef GLOBAL_H_MAIN
 
 #include <game.h>
+#include "SDL.h"
 
 
 
@@ -137,7 +138,6 @@ int initSDL()
 		return 1;
 	}
 
-
 	// Create renderer
 	gMainRenderer = SDL_CreateRenderer(gMainWindow, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_TARGETTEXTURE | (gUseVsync ? SDL_RENDERER_PRESENTVSYNC : 0));
 
@@ -147,9 +147,16 @@ int initSDL()
 		return 1;
 	}
 
+	SDL_RendererInfo info;
 	
+	SDL_GetRendererInfo(gMainRenderer, &info);
+	
+	gFormat = SDL_AllocFormat(info.texture_formats[0]);
+	
+	
+
 	// Get format from window surface
-	gFormat = SDL_GetWindowSurface(gMainWindow)->format;
+	//gFormat = gMainRenderer->info.texture_formats[0];//SDL_GetWindowSurface(gMainWindow)->format;
 
 
 	// TODO this is not needed anymore
@@ -195,9 +202,9 @@ int initTextures()
 
 	out("Loaded textures.");
 	char buf[128];
-	sprintf_s(buf, 128, "Tile size is %dx%d",gCharW, gCharH);
+	sprintf(buf, "Tile size is %dx%d",gCharW, gCharH);
 	out(buf);
-	sprintf_s(buf, 128, "Screen size is %dx%d", gScrW, gScrH);
+	sprintf(buf, "Screen size is %dx%d", gScrW, gScrH);
 	out(buf);
 
 	return 0;
@@ -210,13 +217,13 @@ color_t loadColor(const charptr_t clrName, bttfileptr_t file)
 	char buf[128];
 	uint8_t r, g, b;
 
-	sprintf_s(buf, 128, "ColorScheme.clr%s.R", clrName);
+	sprintf(buf, "ColorScheme.clr%s.R", clrName);
 	r = bttfile_get(file, buf)->payload.TypeByte.value;
 
-	sprintf_s(buf, 128, "ColorScheme.clr%s.G", clrName);
+	sprintf(buf, "ColorScheme.clr%s.G", clrName);
 	g = bttfile_get(file, buf)->payload.TypeByte.value;
 
-	sprintf_s(buf, 128, "ColorScheme.clr%s.B", clrName);
+	sprintf(buf, "ColorScheme.clr%s.B", clrName);
 	b = bttfile_get(file, buf)->payload.TypeByte.value;
 
 	// Create color

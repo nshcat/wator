@@ -1,0 +1,2 @@
+/usr/bin/ar qc libbtt.a  CMakeFiles/btt.dir/src/tagtree.c.o
+/usr/bin/ranlib libbtt.a
