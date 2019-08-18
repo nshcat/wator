@@ -1,6 +1,0 @@
-/home/kitty/git/wator/bld/CMakeFiles/rebuild_cache.dir
-/home/kitty/git/wator/bld/CMakeFiles/wator.dir
-/home/kitty/git/wator/bld/CMakeFiles/edit_cache.dir
-/home/kitty/git/wator/bld/btt/CMakeFiles/rebuild_cache.dir
-/home/kitty/git/wator/bld/btt/CMakeFiles/btt.dir
-/home/kitty/git/wator/bld/btt/CMakeFiles/edit_cache.dir

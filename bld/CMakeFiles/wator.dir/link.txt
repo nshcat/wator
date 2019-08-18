@@ -1,1 +1,0 @@
-/usr/bin/clang -g  -rdynamic CMakeFiles/wator.dir/src/draw.c.o CMakeFiles/wator.dir/src/game.c.o CMakeFiles/wator.dir/src/main.c.o CMakeFiles/wator.dir/src/ptrmap.c.o CMakeFiles/wator.dir/src/simulation.c.o  -o wator /usr/lib/libSDL2main.a /usr/lib/libSDL2.so -lpthread /usr/lib/libSDL2_image.so btt/libbtt.a 
